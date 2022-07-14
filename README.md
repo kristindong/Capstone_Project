@@ -28,5 +28,6 @@ As there are over 200 indicators in the original data set, many of which are red
 13. Earnings per Share (EPS)
 14. Price-Earnings Ratio (P/E)
 15. EBITDA
-16. Free cash flow
+16. Free cash 
+17. 
 
