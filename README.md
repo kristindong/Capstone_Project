@@ -30,4 +30,5 @@ As there are over 200 indicators in the original data set, many of which are red
 15. EBITDA
 16. Free cash flow
 17. Sector
+18. R&D expense
 
