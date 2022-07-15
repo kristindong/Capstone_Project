@@ -5,7 +5,7 @@ Final Project for Data Analytics Class
 
 Financial Indicators vs Stock Market Performance
 
-[Link to Google Slides](https://docs.google.com/presentation/d/1rg12WplVf4fy3VU82EIZb64H5yveYUukMScgsefe0KI/edit#slide=id.gf480dc9fef_0_12)
+[Link to Google Slides](https://docs.google.com/presentation/d/1rg12WplVf4fy3VU82EIZb64H5yveYUukMScgsefe0KI)
 
 The allure of better understanding the relationship between a company’s financial data and it's stock market performance is obvious. The market may seem chaotic, but with enough data can we gain clearer picture of which factors are significantly tied to a stocks performance?
 
