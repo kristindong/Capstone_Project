@@ -45,8 +45,11 @@ As there are over 200 indicators in the original data set, many of which are red
 ## Data Exploration
 
 Pairing down to a single year from 4
+
 Creating two tables 
+
 Pairing down columns selected financial indicators and other relevant data
+
 Data cleaning
 
 
