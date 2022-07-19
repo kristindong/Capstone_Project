@@ -65,3 +65,17 @@ Description of the Analysis stock_prediction_seg2_v6.ipynb
 - Encoding certain columns to prepare it for machine learning
 - We dropped null values and unnecessary columns
 - We also used session.query to create sessions
+
+## Visualizations
+
+To present our work we will utilize Tableau to create powerful visuals making our work, results, and analysis engaging and accessible.
+
+- Import stock analysis data Data
+- Connect Data
+- Modify Data, rename and type
+- Create Work Sheets
+  - Class by sector
+  - Earnings per Share
+  - P Ratio
+- Assemble Dashboard
+- Add Written Analysis
