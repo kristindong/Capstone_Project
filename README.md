@@ -41,3 +41,13 @@ As there are over 200 indicators in the original data set, many of which are red
 17. Sector
 18. R&D expense
 
+
+## Data Exploration
+
+Pairing down to a single year from 4
+Creating two tables 
+Pairing down columns selected financial indicators and other relevant data
+Data cleaning
+
+
+
