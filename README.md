@@ -64,6 +64,8 @@ Data cleaning
 - We dropped null values and unnecessary columns
 - We also used session.query to create sessions
 
+## Analysis
+
 ## Visualizations
 
 To present our work we will utilize Tableau to create powerful visuals making our work, results, and analysis engaging and accessible.
