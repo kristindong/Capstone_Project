@@ -5,9 +5,15 @@ Final Project for Data Analytics Class: Financial Indicators vs Stock Market Per
 
 [Link to Google Slides](https://docs.google.com/presentation/d/1rg12WplVf4fy3VU82EIZb64H5yveYUukMScgsefe0KI)
 
-The allure of better understanding the relationship between a company’s financial data and it's stock market performance is obvious. The market may seem chaotic, but with enough data can we reasonably predict a company's performance? Can we determine which factors are significantly tied to a stocks performance? Aided by the knowledge gained in this course we can attempt engage these questions. 
+The allure of better understanding the relationship between a company’s financial data and it's stock market performance is obvious. The market may seem chaotic, but with enough data can we reasonably predict a company's performance? Can we determine which factors are significantly tied to a stocks performance? Aided by the knowledge gained in this course we can attempt engage these questions.
 
-With this data and our sophisticated analysis, we hope to determine if it is possible to predict the performance of a stock (as measured by whether the stock price increased or decreased in one calendar year) from key financial indicators and if so, which indicators are the most strongly tied to a company’s performance. 
+- Identify and assess a suitable data set
+- Clean, prepare, and explore data
+- Analysis
+- Dashboard and Data Story
+
+With data and our sophisticated tools and analysis, we hope to determine if it is possible to predict the performance of a stock (as measured by whether the stock price increased or decreased in one calendar year) from key financial indicators and if so, which indicators are the most strongly tied to a company’s performance and to be able to present our finding in an understandable way.
+
 
 ## Data
 
