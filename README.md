@@ -52,9 +52,7 @@ Pairing down columns selected financial indicators and other relevant data
 
 Data cleaning
 
-## Data Analysis
-
-Description of the Analysis stock_prediction_seg2_v6.ipynb
+[stock_prediction_seg2_v6.ipynb](https://github.com/kristindong/Capstone_Project/blob/main/stock_prediction_seg2_v6.ipynb)
 
 - We created a sqlite database with two tables in it: 
   - Features
