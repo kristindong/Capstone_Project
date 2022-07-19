@@ -52,5 +52,16 @@ Pairing down columns selected financial indicators and other relevant data
 
 Data cleaning
 
+## Data Analysis
 
+Description of the Analysis stock_prediction_seg2_v6.ipynb
 
+- We created a sqlite database with two tables in it: 
+  - Features
+  - Target 
+- We tested querying the database
+- We linked the two tables
+- We joined the tables using our primary keys
+- Encoding certain columns to prepare it for machine learning
+- We dropped null values and unnecessary columns
+- We also used session.query to create sessions
