@@ -1,5 +1,5 @@
 # Capstone_Project
-Final Project for Data Analytics Class: Financial Indicators vs Stock Market Performance
+Final Project for Data Analytics Class: Using Common Financial Indicators to Predict Stock Performance
 
 ## Overview
 
@@ -17,10 +17,15 @@ With data and our sophisticated tools and analysis, we hope to determine if it i
 
 ## Data
 
-Our data set is composed of over 200 key financial indicators typically found in annual the 10-k fillings from roughly 4000 companies for the years 2014 - 2018. Though voluminous, the data set in neither complete (there are some null values) nor perfect (there are some suspicious outliers) and will require some cleaning. We sourced our data from [Kaggle's repository](https://www.kaggle.com/datasets/cnic92/200-financial-indicators-of-us-stocks-20142018) 
+### Source and Description
 
+The data was sourced from Kaggle's data repository [Kaggle's repository](https://www.kaggle.com/datasets/cnic92/200-financial-indicators-of-us-stocks-20142018). The full data set consisted of four files containing over 200 key financial indicators typically found in annual 10-k fillings from roughly 4000 companies for the years 2014 - 2018. In addition to the financial indicators, the data contained price variance variable, defined as the percentage change in the stock's price over the calendar year), and a class variable with the label "1" if the price increased and "0" otherwise. For this analysis we focused only on the 2018 data set. 
 
-As there are over 200 indicators in the original data set, many of which are redundant or overlap, we selected a subset of indicators that are considered to be most relevant for our model:
+### Data Exploration
+
+During preliminary data exploration, it was apparent that the data contained null values and suspicious values (for example, values falling outside of expected range). In addition, there were redundant variables (multiple columns of the same variable) and many variables that had some overlapping (for example, gross profit and net profit).
+ 
+To make data processing and model training more efficient, we selected and kept only a subset of variables that are commonly considered to be most indicative of company performance. The following variables were kept in the data:
 
 1. Gross Profit Margin = (Revenue - Cost of Sales) / Revenue * 100
 2. Net Profit Margin = Net Profit / Revenue * 100
@@ -40,15 +45,11 @@ As there are over 200 indicators in the original data set, many of which are red
 16. Free cash flow
 17. Sector
 18. R&D expense
+19. Class
 
 
-## Data Exploration
-
-Pairing down to a single year from 4
 
 Creating two tables 
-
-Pairing down columns selected financial indicators and other relevant data
 
 Data cleaning
 
@@ -65,6 +66,27 @@ Data cleaning
 - We also used session.query to create sessions
 
 ## Analysis
+✓ Description of data preprocessing
+✓ Description of feature engineering and the feature selection, including their decision- making process
+✓ Description of how data was split into training and testing sets
+✓ Explanation of model choice, including limitations and benefits
+✓ Explanation of changes in model choice (if changes occurred between the Segment 2 and Segment 3 deliverables)
+✓ Description of how they have trained the model thus far, and any additional training that will take place
+✓ Description of current accuracy score
+
+## Technologies and Tools
+
+- Excel
+- Jupyter Notebook
+- Python, including the following libraries:
+- - Pandas
+- - Matplotlib, Sqlalchemy, Scikit-learn, Imbalance-learn, TensorFlow)
+- SQLite
+- Tableau
+- Google Slides
+- Github
+
+
 
 ## Visualizations
 
