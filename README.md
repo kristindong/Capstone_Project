@@ -79,8 +79,12 @@ Data cleaning
 - Excel
 - Jupyter Notebook
 - Python, including the following libraries:
-- - Pandas
-- - Matplotlib, Sqlalchemy, Scikit-learn, Imbalance-learn, TensorFlow)
+  - Pandas
+  - Matplotlib
+  - Sqlalchemy
+  - Scikit-learn
+  - Imbalance-learn
+  - TensorFlow)
 - SQLite
 - Tableau
 - Google Slides
