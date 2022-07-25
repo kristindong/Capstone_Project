@@ -65,21 +65,25 @@ To make data processing and model training more efficient, we selected and kept 
 
 In our machine learning algorithm, variables 1-18 are independent variables (features) that will be used to predict the dependent variable (target) "Class".
 
+## Analysis
 
 ### Processing
 
-In this step imported the data file and created a Pandas dataframe. Only the variable listed in the previous section were kept and the remaining columns were dropped. Next we checked for null values in each variable. Two variables - ROA and Working Capital, had a significant number of null values and were dropped from the data. After removing those columns, all rows with one or more null values were dropped. 
+To prepare the data for machine learning, we imported the csv data file into Jupyter Notebook and created a Pandas dataframe. Only the variables identified in the exploration process were kept, and the rest were dropped. 
 
-Only one variable - Sector, had categorical data and needed to be encoded. The rest of the data were in numerical format. After encoding, the data was split into features/target and training/testing sets. As the range of variables varied widely - some were ratios and other were dollar amounts, we scaled the features data sets.
+Next we checked for null values in each variable. Two variables - ROA and Working Capital, had a significant number of null values and were dropped from the data. After removing those columns, all rows with one or more null values were dropped. 
+
+Only the Sector variable had categorical data which required encoding, the rest of the columns were in numerical format. 
+
+After encoding Sector, the data was split into X train, y train, X test and y test data sets. As the range of variables varied widely - some were ratios and other were in dollar amounts, the features were scaled to normalize the data. 
+
+To store the data in a relational database, we used Sqlalchemy to create a sqlite database consisting of two tables - Features and Target, that hold the processed data. Queries and joins were performed to ensure that the tables were created properly.
 
 [stock_prediction_seg2_v6.ipynb](https://github.com/kristindong/Capstone_Project/blob/main/stock_prediction_seg2_v6.ipynb)
 
-To store the data in relational database, we used Sqlalchemy to create a sqlite database consisting of two tables - Features and Target, that hold the processed data. Queries and joins were performed to ensure that the tables were created properly.
 
 
 
-
-## Analysis
 ✓ Description of data preprocessing
 ✓ Description of feature engineering and the feature selection, including their decision- making process
 ✓ Description of how data was split into training and testing sets
