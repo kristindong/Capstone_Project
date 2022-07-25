@@ -7,8 +7,8 @@ Final Project for Data Analytics Class: Using Common Financial Indicators to Pre
 
 The allure of better understanding the relationship between a company’s financial data and it's stock performance is obvious. The market seems chaotic and random, but with enough data can we reasonably predict a company's stock performance? Can we determine which metrics are significantly tied to a stock's movement? We attempt to answer these questions by making some simplifying assumptions and using the tools we learned from this course.
 
-**Quesitons this analysis attempts to answer:** 
-1) How well can publicly disclosed financial data predict the performance of a stock, as measured by whether the stock price increased or decreased in the following calendar year?
+**Questions this analysis attempts to answer:** 
+1) How well can publicly disclosed financial data predict the performance of a stock, measured by whether the stock price increased or decreased in the following calendar year?
 2) Which financial indicators have the most predictive power?
 
 ## Technologies and Tools
@@ -43,9 +43,8 @@ During the initial data exploration, we made a few observations:
 - There were redundant variables (multiple columns of the same variable)
 - Many variables had some overlapping (for example, gross profit and net profit)
 - The two classes in the target variable "Class" are imbalanced, with 70% of stocks falling into class 1
- 
-![Classes](Resources/D_Classes.png)
 
+![Classes](Resources/D_Classes.png)
 
 To make data processing and model training more efficient, we decided to select and keep only a subset of the variables that are commonly considered to be most indicative of company performance. The following variables were kept in the data:
 
@@ -73,7 +72,7 @@ In our machine learning algorithm, variables 1-18 are independent variables (fea
 
 ## Analysis
 
-### Processing
+### Preprocessing
 
 To prepare the data for machine learning, we imported the csv data file into Jupyter Notebook and created a Pandas dataframe. Only the variables identified in the exploration process were kept, and the rest were dropped. 
 
@@ -105,7 +104,11 @@ Using the chart below as a guide, we test a few other algorithms to see if the p
 
 #### Random Forest 
 
+The random forest model slightly improved the accuracy score and determined the relative importance of each dependent variable.
+
 ![rf_score](Resources/rf_score.png)
+
+![feature_importance](Resources/D_Features.png)
 
 We will also test an Easy Ensemble and Neural Network model.
 
