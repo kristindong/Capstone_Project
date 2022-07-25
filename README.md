@@ -79,3 +79,6 @@ To present our work we will utilize Tableau to create powerful visuals making ou
   - P Ratio
 - Assemble Dashboard
 - Add Written Analysis
+
+Link to tableau story:
+https://public.tableau.com/app/profile/samim.arif4259/viz/Finalprojectpresentation/FinalProjectPresentation?publish=yes
