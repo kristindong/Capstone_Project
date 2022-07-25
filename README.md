@@ -5,7 +5,7 @@ Final Project for Data Analytics Class: Using Common Financial Indicators to Pre
 
 [Link to Google Slides](https://docs.google.com/presentation/d/1rg12WplVf4fy3VU82EIZb64H5yveYUukMScgsefe0KI)
 
-The allure of better understanding the relationship between a company’s financial data and it's stock market performance is obvious. The market may seem chaotic, but with enough data can we reasonably predict a company's performance? Can we determine which factors are significantly tied to a stocks performance? Aided by the knowledge gained in this course we can attempt engage these questions.
+The allure of better understanding the relationship between a company’s financial data and it's stock market performance is obvious. The market may seem chaotic, but with enough data can we reasonably predict a company's performance? Can we determine which factors are significantly tied to a stocks performance? We attempt to answer these questions using the tools we learned from this course.
 
 - Identify and assess a suitable data set
 - Clean, prepare, and explore data
@@ -14,6 +14,22 @@ The allure of better understanding the relationship between a company’s financ
 
 With data and our sophisticated tools and analysis, we hope to determine if it is possible to predict the performance of a stock (as measured by whether the stock price increased or decreased in one calendar year) from key financial indicators and if so, which indicators are the most strongly tied to a company’s performance and to be able to present our finding in an understandable way.
 
+## Technologies and Tools
+
+The following technologies and languages were used for the analysis
+- Excel
+- Jupyter Notebook
+- Python, including the following libraries:
+  - Pandas
+  - Matplotlib
+  - Sqlalchemy
+  - Scikit-learn
+  - Imbalance-learn
+  - TensorFlow
+- SQLite
+- Tableau
+- Google Slides
+- Github
 
 ## Data
 
@@ -21,7 +37,7 @@ With data and our sophisticated tools and analysis, we hope to determine if it i
 
 The data was sourced from Kaggle's data repository [Kaggle's repository](https://www.kaggle.com/datasets/cnic92/200-financial-indicators-of-us-stocks-20142018). The full data set consisted of four files containing over 200 key financial indicators typically found in annual 10-k fillings from roughly 4000 companies for the years 2014 - 2018. In addition to the financial indicators, the data contained price variance variable, defined as the percentage change in the stock's price over the calendar year), and a class variable with the label "1" if the price increased and "0" otherwise. For this analysis we focused only on the 2018 data set. 
 
-### Data Exploration
+### Exploration
 
 During preliminary data exploration, it was apparent that the data contained null values and suspicious values (for example, values falling outside of expected range). In addition, there were redundant variables (multiple columns of the same variable) and many variables that had some overlapping (for example, gross profit and net profit).
  
@@ -47,7 +63,14 @@ To make data processing and model training more efficient, we selected and kept 
 18. R&D expense
 19. Class
 
+In our machine learning algorithm, variables 1-18 are independent variables (features) that will be used to predict the dependent variable (target) "Class".
 
+
+### Processing
+
+In this step imported the data file and created a Pandas dataframe. Only the variable listed in the previous section were kept and the remaining columns were dropped. Next we checked for null values in each variable. Two variables - ROA and Working Capital, had a significant number of null values and were dropped from the data. After removing those columns, all rows with one or more null values were dropped. 
+
+The 
 
 Creating two tables 
 
@@ -65,6 +88,8 @@ Data cleaning
 - We dropped null values and unnecessary columns
 - We also used session.query to create sessions
 
+
+
 ## Analysis
 ✓ Description of data preprocessing
 ✓ Description of feature engineering and the feature selection, including their decision- making process
@@ -74,21 +99,7 @@ Data cleaning
 ✓ Description of how they have trained the model thus far, and any additional training that will take place
 ✓ Description of current accuracy score
 
-## Technologies and Tools
 
-- Excel
-- Jupyter Notebook
-- Python, including the following libraries:
-  - Pandas
-  - Matplotlib
-  - Sqlalchemy
-  - Scikit-learn
-  - Imbalance-learn
-  - TensorFlow)
-- SQLite
-- Tableau
-- Google Slides
-- Github
 
 
 
