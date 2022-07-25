@@ -35,11 +35,11 @@ The following technologies and languages were used for the analysis
 
 ### Source and Description
 
-The data was sourced from Kaggle's data repository [Kaggle's repository](https://www.kaggle.com/datasets/cnic92/200-financial-indicators-of-us-stocks-20142018). The full data set consisted of four files containing over 200 key financial indicators typically found in annual 10-k fillings from roughly 4000 companies for the years 2014 - 2018. In addition to the financial indicators, the data contained price variance variable, defined as the percentage change in the stock's price over the calendar year), and a class variable with the label "1" if the price increased and "0" otherwise. For this analysis we focused only on the 2018 data set. 
+The data was sourced from [Kaggle's data repository](https://www.kaggle.com/datasets/cnic92/200-financial-indicators-of-us-stocks-20142018). The full data set consists of four csv files containing over 200 key financial indicators typically found in annual 10-k fillings from roughly 4000 companies for the years 2014 - 2018. In addition to the financial indicators, the data contained price variance variable, defined as the percentage change in the stock's price over the calendar year), and a class variable with the label "1" if the price increased and "0" otherwise. For this analysis we focused only on the 2018 data set. 
 
 ### Exploration
 
-During preliminary data exploration, it was apparent that the data contained null values and suspicious values (for example, values falling outside of expected range). In addition, there were redundant variables (multiple columns of the same variable) and many variables that had some overlapping (for example, gross profit and net profit).
+During initial data exploration, it was apparent that the data contained null values and suspicious values (for example, values falling outside of expected range). In addition, there were redundant variables (multiple columns of the same variable) and many variables that had some overlapping (for example, gross profit and net profit).
  
 To make data processing and model training more efficient, we selected and kept only a subset of variables that are commonly considered to be most indicative of company performance. The following variables were kept in the data:
 
@@ -70,23 +70,12 @@ In our machine learning algorithm, variables 1-18 are independent variables (fea
 
 In this step imported the data file and created a Pandas dataframe. Only the variable listed in the previous section were kept and the remaining columns were dropped. Next we checked for null values in each variable. Two variables - ROA and Working Capital, had a significant number of null values and were dropped from the data. After removing those columns, all rows with one or more null values were dropped. 
 
-The 
-
-Creating two tables 
-
-Data cleaning
+Only one variable - Sector, had categorical data and needed to be encoded. The rest of the data were in numerical format. After encoding, the data was split into features/target and training/testing sets. As the range of variables varied widely - some were ratios and other were dollar amounts, we scaled the features data sets.
 
 [stock_prediction_seg2_v6.ipynb](https://github.com/kristindong/Capstone_Project/blob/main/stock_prediction_seg2_v6.ipynb)
 
-- We created a sqlite database with two tables in it: 
-  - Features
-  - Target 
-- We tested querying the database
-- We linked the two tables
-- We joined the tables using our primary keys
-- Encoding certain columns to prepare it for machine learning
-- We dropped null values and unnecessary columns
-- We also used session.query to create sessions
+To store the data in relational database, we used Sqlalchemy to create a sqlite database consisting of two tables - Features and Target, that hold the processed data. Queries and joins were performed to ensure that the tables were created properly.
+
 
 
 
