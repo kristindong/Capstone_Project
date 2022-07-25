@@ -73,6 +73,8 @@ To prepare the data for machine learning, we imported the csv data file into Jup
 
 Next we checked for null values in each variable. Two variables - ROA and Working Capital, had a significant number of null values and were dropped from the data. After removing those columns, all rows with one or more null values were dropped. 
 
+![null_values](Resources/null_values.png)
+
 Only the Sector variable had categorical data which required encoding, the rest of the columns were in numerical format. 
 
 After encoding Sector, the data was split into X train, y train, X test and y test data sets. As the range of variables varied widely - some were ratios and other were in dollar amounts, the features were scaled to normalize the data. 
@@ -83,20 +85,21 @@ To store the data in a relational database, we used Sqlalchemy to create a sqlit
 
 ### Machine Learning
 
-The question we're trying to answer - how well can a chosen set of financial metrics predict whether the stock price increased or decreased, is a classification problem. We start with a logistic regression model, which has high interpretability but lower accuracy compared to other more complex algorithms. 
+The question we're trying to answer - how well can a chosen set of financial metrics predict whether the stock price increased or decreased, is a classification problem. We start with a logistic regression model, because it has high interpretability compared to other more complex algorithms. 
 
+The logistic regression model overall accuracy score is 0.69. While the model was good at predicting class 1 (price increased), it did not perform very well in either precision or recall for class 0 (price decreased or constant). This was anticipated in our exploratory analysis which showed that there was  some imbalance in the categories, i.e., the class 1 to class 0 ratio was 7:3.
 
-[model_selection]![Resources/model_selection.png]
+![logr_score](Resources/logr_score.png)
 
+Using the chart below as a guide, we test a few other algorithms to see if we can improve the predictions. 
 
-Next, we test a random forest model, ensemble model, and neural network model to see if we can improve the predictions. 
+![model_selection](Resources/model_selection.png)
 
+Random Forest 
 
+![rf_score](Resources/rf_score.png)
 
-✓ Description of current accuracy score
-
-
-
+We will also test an Easy Ensemble and Neural Network model.
 
 
 ## Visualizations
