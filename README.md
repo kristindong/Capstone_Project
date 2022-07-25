@@ -81,15 +81,10 @@ To store the data in a relational database, we used Sqlalchemy to create a sqlit
 
 [stock_prediction_seg2_v6.ipynb](https://github.com/kristindong/Capstone_Project/blob/main/stock_prediction_seg2_v6.ipynb)
 
+### Machine Learning
 
+The question we're trying to answer is a classification problem. We start with logistic regression, which has high interpretability compared to other algorithms. We then tested a random forest model, ensemble model, and a neural network model to see if we can improve the accuracy.
 
-
-✓ Description of data preprocessing
-✓ Description of feature engineering and the feature selection, including their decision- making process
-✓ Description of how data was split into training and testing sets
-✓ Explanation of model choice, including limitations and benefits
-✓ Explanation of changes in model choice (if changes occurred between the Segment 2 and Segment 3 deliverables)
-✓ Description of how they have trained the model thus far, and any additional training that will take place
 ✓ Description of current accuracy score
 
 
