@@ -41,7 +41,7 @@ The data was sourced from [Kaggle's data repository](https://www.kaggle.com/data
 
 During initial data exploration, it was apparent that the data contained null values and suspicious values (for example, values falling outside of expected range). In addition, there were redundant variables (multiple columns of the same variable) and many variables that had some overlapping (for example, gross profit and net profit).
  
-To make data processing and model training more efficient, we selected and kept only a subset of variables that are commonly considered to be most indicative of company performance. The following variables were kept in the data:
+To make data processing and model training more efficient, we selected and kept only a subset of the variables that are commonly considered to be most indicative of company performance. The following variables were kept in the data:
 
 1. Gross Profit Margin = (Revenue - Cost of Sales) / Revenue * 100
 2. Net Profit Margin = Net Profit / Revenue * 100
@@ -86,7 +86,7 @@ To store the data in a relational database, we used Sqlalchemy to create a sqlit
 The question we're trying to answer - how well can a chosen set of financial metrics predict whether the stock price increased or decreased, is a classification problem. We start with a logistic regression model, which has high interpretability but lower accuracy compared to other more complex algorithms. 
 
 
-
+[model_selection]![Resources/model_selection.png]
 
 
 Next, we test a random forest model, ensemble model, and neural network model to see if we can improve the predictions. 
