@@ -1,9 +1,9 @@
 # Capstone_Project
 Final Project for Data Analytics Class: Using Common Financial Indicators to Predict Stock Performance
 
-## Overview
-
 [Link to Google Slides](https://docs.google.com/presentation/d/1rg12WplVf4fy3VU82EIZb64H5yveYUukMScgsefe0KI)
+
+## Overview
 
 The allure of better understanding the relationship between a company’s financial data and it's stock market performance is obvious. The market may seem chaotic, but with enough data can we reasonably predict a company's performance? Can we determine which factors are significantly tied to a stocks performance? We attempt to answer these questions using the tools we learned from this course.
 
@@ -83,7 +83,15 @@ To store the data in a relational database, we used Sqlalchemy to create a sqlit
 
 ### Machine Learning
 
-The question we're trying to answer is a classification problem. We start with logistic regression, which has high interpretability compared to other algorithms. We then tested a random forest model, ensemble model, and a neural network model to see if we can improve the accuracy.
+The question we're trying to answer - how well can a chosen set of financial metrics predict whether the stock price increased or decreased, is a classification problem. We start with a logistic regression model, which has high interpretability but lower accuracy compared to other more complex algorithms. 
+
+
+
+
+
+Next, we test a random forest model, ensemble model, and neural network model to see if we can improve the predictions. 
+
+
 
 ✓ Description of current accuracy score
 
@@ -93,7 +101,7 @@ The question we're trying to answer is a classification problem. We start with l
 
 ## Visualizations
 
-To present our work we will utilize Tableau to create powerful visuals making our work, results, and analysis engaging and accessible.
+To present our work we will utilize Tableau to create visualizations to convey our analysis and results in a more engaging and accessible manner.
 
 - Import stock analysis data Data
 - Connect Data
