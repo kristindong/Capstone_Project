@@ -5,14 +5,11 @@ Final Project for Data Analytics Class: Using Common Financial Indicators to Pre
 
 ## Overview
 
-The allure of better understanding the relationship between a company’s financial data and it's stock market performance is obvious. The market may seem chaotic, but with enough data can we reasonably predict a company's performance? Can we determine which factors are significantly tied to a stocks performance? We attempt to answer these questions using the tools we learned from this course.
+The allure of better understanding the relationship between a company’s financial data and it's stock performance is obvious. The market seems chaotic and random, but with enough data can we reasonably predict a company's stock performance? Can we determine which metrics are significantly tied to a stock's movement? We attempt to answer these questions by making some simplifying assumptions and using the tools we learned from this course.
 
-- Identify and assess a suitable data set
-- Clean, prepare, and explore data
-- Analysis
-- Dashboard and Data Story
-
-With data and our sophisticated tools and analysis, we hope to determine if it is possible to predict the performance of a stock (as measured by whether the stock price increased or decreased in one calendar year) from key financial indicators and if so, which indicators are the most strongly tied to a company’s performance and to be able to present our finding in an understandable way.
+**Quesitons this analysis attempts to answer:** 
+1) How well can publicly disclosed financial data predict the performance of a stock, as measured by whether the stock price increased or decreased in the following calendar year?
+2) Which financial indicators have the most predictive power?
 
 ## Technologies and Tools
 
@@ -22,7 +19,7 @@ The following technologies and languages were used for the analysis
 - Python, including the following libraries:
   - Pandas
   - Matplotlib
-  - Sqlalchemy
+  - SQLAlchemy
   - Scikit-learn
   - Imbalance-learn
   - TensorFlow
@@ -35,13 +32,22 @@ The following technologies and languages were used for the analysis
 
 ### Source and Description
 
-The data was sourced from [Kaggle's data repository](https://www.kaggle.com/datasets/cnic92/200-financial-indicators-of-us-stocks-20142018). The full data set consists of four csv files containing over 200 key financial indicators typically found in annual 10-k fillings from roughly 4000 companies for the years 2014 - 2018. In addition to the financial indicators, the data contained price variance variable, defined as the percentage change in the stock's price over the calendar year), and a class variable with the label "1" if the price increased and "0" otherwise. For this analysis we focused only on the 2018 data set. 
+The data was sourced from [Kaggle's data repository](https://www.kaggle.com/datasets/cnic92/200-financial-indicators-of-us-stocks-20142018). The full data set consists of four csv files containing over 200 key financial indicators typically found in annual 10-k fillings from roughly 4000 companies for the years 2014 - 2018. In addition to the financial indicators, the data contained price variance field, defined as the percentage change in the stock's price over the calendar year), and a class variable with the label "1" if the price increased and "0" otherwise. For this analysis we focused only on the 2018 data set. 
 
 ### Exploration
 
-During initial data exploration, it was apparent that the data contained null values and suspicious values (for example, values falling outside of expected range). In addition, there were redundant variables (multiple columns of the same variable) and many variables that had some overlapping (for example, gross profit and net profit).
+During the initial data exploration, we made a few observations:
+- The data contained null values
+- The data contained suspicious values (for example, values falling outside of expected ranges)
+- Some variables had outliers
+- There were redundant variables (multiple columns of the same variable)
+- Many variables had some overlapping (for example, gross profit and net profit)
+- The two classes in the target variable "Class" are imbalanced, with 70% of stocks falling into class 1
  
-To make data processing and model training more efficient, we selected and kept only a subset of the variables that are commonly considered to be most indicative of company performance. The following variables were kept in the data:
+![Classes](Resources/D_Classes.png)
+
+
+To make data processing and model training more efficient, we decided to select and keep only a subset of the variables that are commonly considered to be most indicative of company performance. The following variables were kept in the data:
 
 1. Gross Profit Margin = (Revenue - Cost of Sales) / Revenue * 100
 2. Net Profit Margin = Net Profit / Revenue * 100
@@ -61,7 +67,7 @@ To make data processing and model training more efficient, we selected and kept 
 16. Free cash flow
 17. Sector
 18. R&D expense
-19. Class
+19. Class (1 = price increased, 0 = price decreased or constant)
 
 In our machine learning algorithm, variables 1-18 are independent variables (features) that will be used to predict the dependent variable (target) "Class".
 
@@ -87,15 +93,17 @@ To store the data in a relational database, we used Sqlalchemy to create a sqlit
 
 The question we're trying to answer - how well can a chosen set of financial metrics predict whether the stock price increased or decreased, is a classification problem. We start with a logistic regression model, because it has high interpretability compared to other more complex algorithms. 
 
-The logistic regression model overall accuracy score is 0.69. While the model was good at predicting class 1 (price increased), it did not perform very well in either precision or recall for class 0 (price decreased or constant). This was anticipated in our exploratory analysis which showed that there was  some imbalance in the categories, i.e., the class 1 to class 0 ratio was 7:3.
+#### Logistic Regression
+
+The logistic regression model overall accuracy score is 0.69. While the model was good at predicting class 1 (price increase), it did not perform very well in either precision or recall for class 0 (price decrease/constant). This was anticipated in our exploratory analysis which showed that there was  some imbalance in the target, i.e., there were significantly fewwer observations of class 0 in the data.
 
 ![logr_score](Resources/logr_score.png)
 
-Using the chart below as a guide, we test a few other algorithms to see if we can improve the predictions. 
+Using the chart below as a guide, we test a few other algorithms to see if the predictions can be improved.
 
 ![model_selection](Resources/model_selection.png)
 
-Random Forest 
+#### Random Forest 
 
 ![rf_score](Resources/rf_score.png)
 
@@ -104,17 +112,6 @@ We will also test an Easy Ensemble and Neural Network model.
 
 ## Visualizations
 
-To present our work we will utilize Tableau to create visualizations to convey our analysis and results in a more engaging and accessible manner.
+To present our work we will utilize Tableau to create visualizations to make our analysis and results more engaging and accessible.
 
-- Import stock analysis data Data
-- Connect Data
-- Modify Data, rename and type
-- Create Work Sheets
-  - Class by sector
-  - Earnings per Share
-  - P Ratio
-- Assemble Dashboard
-- Add Written Analysis
-
-Link to tableau story:
-https://public.tableau.com/app/profile/samim.arif4259/viz/Finalprojectpresentation/FinalProjectPresentation?publish=yes
+[Link to tableau story](https://public.tableau.com/app/profile/samim.arif4259/viz/Finalprojectpresentation/FinalProjectPresentation?publish=yes)
