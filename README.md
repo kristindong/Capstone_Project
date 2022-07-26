@@ -31,5 +31,5 @@ As there are over 200 indicators in the original data set, many of which are red
 16. Free cash 
 17. R&D Expenses
 18. Sector
-   
+
     
