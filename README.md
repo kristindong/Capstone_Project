@@ -90,31 +90,39 @@ To store the data in a relational database, we used Sqlalchemy to create a sqlit
 
 ### Machine Learning
 
-The question we're trying to answer - how well can a chosen set of financial metrics predict whether the stock price increased or decreased, is a classification problem. We start with a logistic regression model, because it has high interpretability compared to other more complex algorithms. 
-
-#### Logistic Regression
-
-The logistic regression model overall accuracy score is 0.69. While the model was good at predicting class 1 (price increase), it did not perform very well in either precision or recall for class 0 (price decrease/constant). This was anticipated in our exploratory analysis which showed that there was  some imbalance in the target, i.e., there were significantly fewwer observations of class 0 in the data.
-
-![logr_score](Resources/logr_score.png)
-
-Using the chart below as a guide, we test a few other algorithms to see if the predictions can be improved.
+The question we're trying to answer - how well can a chosen set of financial metrics predict whether the stock price increased or decreased, is a classification problem. We start with a logistic regression model, because it is simple and has high interpretability compared to other more complex algorithms. 
 
 ![model_selection](Resources/model_selection.png)
 
-#### Random Forest 
+#### Logistic Regression
 
-The random forest model slightly improved the accuracy score and determined the relative importance of each dependent variable.
+The logistic regression model overall accuracy score is 0.69. This is not a great score since 67% (661 / 980) accuracy can be achieved by simply predicting all 1s without using any model at all. Furthermore, because the data is imbalanced, the model it did not perform very well in either precision or recall for class 0. This was anticipated during our data exploration phase.
 
-![rf_score](Resources/rf_score.png)
+![logr_score](Resources/logr_score.png)
 
-![feature_importance](Resources/D_Features.png)
 
-We will also test an Easy Ensemble and Neural Network model.
+#### Other Models
+We tested a few other algorithms. The results are summarized below.
+
+![summary](Resources/model_results_summary.png)
+
+#### Conclusion
+
+- None of the models were great but Random Forest and Easy Ensemble had slightly better results
+
+- Model choice should depend on how it will be used
+
+- Precision is more important than recall if model is used to make investment decisions, since false positives would result in financial loss
+
+- If strategy is buy class 1, don’t act on class 0, then maximize class 1 precision
+
+- If strategy is buy class 1 and short class 0, then maximize both precisions
+
+- Model ignore other significant factors such as overall economy, investor sentiment, world events
 
 
 ## Visualizations
 
-To present our work we will utilize Tableau to create visualizations to make our analysis and results more engaging and accessible.
+We utilized Tableau to create visualizations to make our analysis and results more engaging and accessible.
 
 [Link to tableau story](https://public.tableau.com/app/profile/samim.arif4259/viz/Finalprojectpresentation/FinalProjectPresentation?publish=yes)
